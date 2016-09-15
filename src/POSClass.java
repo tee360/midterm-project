@@ -51,6 +51,10 @@ public class POSClass {
 	}
 	
 	
+	public double calculateChange(double amountReceived) {
+		double changeAmount = calculateGrandTotal()- amountReceived ;
+		return changeAmount;
+	}
 
 	public List<String> readMenu() {
 		List<String> foods = new ArrayList<>();

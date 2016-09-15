@@ -79,3 +79,8 @@ public class POSClass {
 	}
 	
 }
+public void getPaymentType() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("select payment type - cash ,credit or check" );
+	String paymentType = sc.nextLine();
+	System.out.println("");

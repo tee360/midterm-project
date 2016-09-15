@@ -13,6 +13,8 @@ import java.util.Scanner;
 
 public class POSClass {
 
+	public static final double subtotal = 0;
+
 	List<Double> pricing = Arrays.asList(1.39, 2.59, 7.32);
 	
 	private Path filePath;
@@ -27,13 +29,28 @@ public class POSClass {
 	}
 	
 	public double getSubTotal() {
-		double sum = 0;
+		double subtotal = 0;
 	    for(int i = 0; i < pricing.size(); i++)
 	    {
-	        sum += pricing.get(i);
+	        subtotal += pricing.get(i);
 	    }
-	    return sum;
+	    return subtotal;
 	}
+	
+	public double calculateSalesTax(double x) {
+		double orderSalesTax = x * .06;
+		return orderSalesTax;
+	}
+	
+	public double formatSalesTax() {
+		return calculateSalesTax(getSubTotal());
+	}
+	
+	public double calculateGrandTotal() {
+		return formatSalesTax() + getSubTotal();
+	}
+	
+	
 
 	public List<String> readMenu() {
 		List<String> foods = new ArrayList<>();

@@ -48,6 +48,12 @@ public class POSClass {
 		return formatSalesTax() + getSubTotal();
 	}
 
+	public double calculateChange(double amountReceived) {
+		double changeAmount = calculateGrandTotal()- amountReceived ;
+		return changeAmount;
+	}
+
+
 	public List<String> readMenu() {
 		List<String> foods = new ArrayList<>();
 		if (!Files.exists(filePath)) {

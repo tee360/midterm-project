@@ -13,7 +13,7 @@ public class POSApp {
 				 System.out.println(lineList);
 			 System.out.println();
 			 System.out.println("What would you like to order?");
-			 System.out.println(foods.calculateGrandTotal());
+			// System.out.println(foods.calculateGrandTotal());
 	}
 
 }

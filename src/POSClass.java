@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,10 +15,12 @@ import java.util.Scanner;
 
 public class POSClass {
 
-	public static final double subtotal = 0;
-
-	List<Double> pricing = Arrays.asList(1.39, 2.59, 7.32);
-	
+//	public static final double subtotal = 0;
+//
+//	List<Double> pricing = Arrays.asList(1.39, 2.59, 7.32);
+//	
+	public double subtotal = 0;
+	ArrayList<Double> pricing = new ArrayList<>();	
 	private Path filePath;
 
 	public POSClass(String filePathString) {
@@ -37,24 +41,23 @@ public class POSClass {
 	    return subtotal;
 	}
 	
-	public double calculateSalesTax(double x) {
-		double orderSalesTax = x * .06;
-		return orderSalesTax;
+	public double calculateSalesTax() {
+		double orderSalesTax = this.subtotal * .06;
+		return formatSalesTax(orderSalesTax);
 	}
 	
-	public double formatSalesTax() {
-		return calculateSalesTax(getSubTotal());
+	private double formatSalesTax(double salesTax) {
+		BigDecimal afterTax = new BigDecimal(salesTax);
+		afterTax = afterTax.setScale(2, RoundingMode.HALF_UP);
+		double formatted = afterTax.doubleValue();
+		return formatted;
 	}
 	
 	public double calculateGrandTotal() {
-		return formatSalesTax() + getSubTotal();
+		return calculateSalesTax(subtotal) + getSubTotal();
 	}
 	
 	
-	public double calculateChange(double amountReceived) {
-		double changeAmount = calculateGrandTotal()- amountReceived ;
-		return changeAmount;
-	}
 
 	public List<String> readMenu() {
 		List<String> foods = new ArrayList<>();
@@ -79,8 +82,3 @@ public class POSClass {
 	}
 	
 }
-public void getPaymentType() {
-	Scanner sc = new Scanner(System.in);
-	System.out.println("select payment type - cash ,credit or check" );
-	String paymentType = sc.nextLine();
-	System.out.println("");

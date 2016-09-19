@@ -10,8 +10,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-//import java.util.Scanner;
-
+import java.util.Scanner;
 
 public class POSClass {
 
@@ -20,18 +19,6 @@ public class POSClass {
 	
 	// the instance variable
 	private ArrayList<POSClass> lineItems;	
-	
-	private Path filePath;
-
-	public POSClass(String filePathString) {
-		this.filePath = Paths.get(filePathString);
-		lineItems = new ArrayList<>();
-	}
-
-	public POSClass() {
-		this("src/menu.txt");
-		
-	}
 	
 	public double getSubTotal() {
 		double subtotal = 0;
@@ -68,27 +55,4 @@ public class POSClass {
 		return changeAmount;
 	}
 
-
-	public List<String> readMenu() {
-		List<String> foods = new ArrayList<>();
-		if (!Files.exists(filePath)) {
-			return foods;
-		}
-		try {
-			File file = filePath.toFile();
-			FileReader fileReader = new FileReader(file);
-			BufferedReader reader = new BufferedReader(fileReader);
-
-			String line = reader.readLine();
-			while (line != null) {
-				foods.add(line);
-				line = reader.readLine();
-			}
-			reader.close();
-			return foods;
-		} catch (IOException ex) {
-			throw new RuntimeException("Unable to read menu.", ex);
-		}
-	}
-	
 }

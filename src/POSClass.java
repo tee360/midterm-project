@@ -10,13 +10,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class POSClass {
 
 	List<Double> pricing = Arrays.asList(1.39, 2.59, 7.32);
 	
 	private Path filePath;
-
+	
+	
 	public POSClass(String filePathString) {
 		this.filePath = Paths.get(filePathString);
 	}
@@ -54,8 +54,8 @@ public class POSClass {
 	}
 
 
-	public List<String> readMenu() {
-		List<String> foods = new ArrayList<>();
+	public List<POSProducts> readMenu() {
+		List<POSProducts> foods = new ArrayList<>();
 		if (!Files.exists(filePath)) {
 			return foods;
 		}
@@ -66,7 +66,7 @@ public class POSClass {
 
 			String line = reader.readLine();
 			while (line != null) {
-				foods.add(line);
+				foods.add(null);
 				line = reader.readLine();
 			}
 			reader.close();

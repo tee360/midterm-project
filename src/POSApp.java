@@ -1,9 +1,11 @@
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class POSApp {
-	public static POSProducts[] products = new POSProducts[] {
+	private static List<POSProducts> itemList;
+	/**public static POSProducts[] products = new POSProducts[] {
 			new POSProducts("Item 1", "Category1", "Description1", 1.00),
 			new POSProducts("Item 2", "Category2", "Description2", 2.00),
 			new POSProducts("Item 3", "Category3", "Description3", 3.00),
@@ -16,15 +18,35 @@ public class POSApp {
 			new POSProducts("Item 10", "Category10", "Description10", 10.00),
 			new POSProducts("Item 11", "Category11", "Description11", 11.00),
 			new POSProducts("Item 12", "Category12", "Description12", 12.00), };
-
+**/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		POSProducts product;
+		// TODO Auto-generated method stub
+	
+		ArrayList<POSProducts> productList = new ArrayList<POSProducts>();
+	
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to the Most Awesome Shop Ever!");
 		System.out.println("Here's our menu: ");
 		System.out.println();
-
+		//itemList = new POSClass().readMenu();
+		itemList = new ItemListMock().getListOfItems();
+		 for(int i = 0; i < itemList.size(); i++)
+		    {
+		POSProducts newitemList = itemList.get(i);
+		
+		System.out.println(newitemList.getName()); }
+		 System.out.println();
+		 System.out.println("What would you like to order?");
+			int itemChoice = sc.nextInt();
+			int itemIndex = itemChoice - 1;
+			product = itemList.get(itemIndex);
+			System.out.println(product.getName() + " at a price of " + product.getPrice());
+			System.out.println("How many would you like?");
+			int quantWanted = sc.nextInt();
+			double priceQuantity = ((product.getPrice()) * (quantWanted));
+			System.out.println(priceQuantity);
+			
 		/**
 		 * yg added code to calculate state sales tax depending on users state
 		 * of residence
@@ -68,11 +90,11 @@ public class POSApp {
 		 * yg added code to calculate state sales tax depending on users state
 		 * of residence
 		 */
-
+/**
 		POSClass foods = new POSClass();
 		List<String> listOfFoods = foods.readMenu();
 		for (String lineList : listOfFoods)
-			System.out.println(lineList);
+			System.out.println(lineList); 
 		System.out.println();
 		System.out.println("What would you like to order?");
 		int itemChoice = sc.nextInt();
@@ -81,6 +103,14 @@ public class POSApp {
 		System.out.println(product.getName() + " " + product.getCategory() + " " + product.getDescription() + " "
 				+ product.getFormattedPrice());
 		// System.out.println(foods.calculateGrandTotal());
+**/
+	}
+	private static void printItems() {
+		for (POSProducts truck : itemList) {
+
+			System.out.println(truck);
+
+		}
 
 	}
 

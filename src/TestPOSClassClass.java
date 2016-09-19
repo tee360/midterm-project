@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
 
+import co.grandcircus.tMartin.java.Product;
+
 public class TestPOSClassClass {
 	
 	@Test

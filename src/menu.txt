@@ -1,12 +1,12 @@
-Food1
-Food2
-Food3
-Food4
-Food5
-Food6
-Food7
-Food8
-Food9
-Food10
-Food11
-Food12
+Food1, Category1, Description1, 1.00
+Food2, Category2, Description2, 2.00
+Food3, Category3, Description3, 3.00
+Food4, Category4, Description4, 4.00
+Food5, Category5, Description5, 5.00
+Food6, Category6, Description6, 6.00
+Food7, Category7, Description7, 7.00
+Food8, Category8, Description7, 8.00
+Food9, Category9, Description9, 9.00
+Food10, Category10, Description10, 10.00
+Food11, Category11, Description11, 11.00
+Food12, Category12, Description12, 12.00

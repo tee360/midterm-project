@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,12 +15,17 @@ import java.util.List;
 
 public class POSClass {
 
-	List<Double> pricing = Arrays.asList(1.39, 2.59, 7.32);
+	List<Double> pricing = Arrays.asList(100.0);
+	//List<String> menu = new ArrayList<>();
+	
+	// the instance variable
+	private ArrayList<POSClass> lineItems;	
 	
 	private Path filePath;
 
 	public POSClass(String filePathString) {
 		this.filePath = Paths.get(filePathString);
+		lineItems = new ArrayList<>();
 	}
 
 	public POSClass() {
@@ -33,6 +40,14 @@ public class POSClass {
 	        subtotal += pricing.get(i);
 	    }
 	    return subtotal;
+	}
+	
+	public double getTotal() {
+		double invoiceTotal = 0;
+		for(POSClass lineItem : lineItems) {
+			invoiceTotal += lineItem.getTotal();
+		}
+		return invoiceTotal;
 	}
 	
 	public double calculateSalesTax(double x) {

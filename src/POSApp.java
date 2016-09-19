@@ -7,7 +7,7 @@ public class POSApp {
 			new POSProducts("Item 2", "Category2", "Description2", 2.00),
 			new POSProducts("Item 3", "Category3", "Description3", 3.00),
 			new POSProducts("Item 4", "Category4", "Description4", 4.00),
-			new POSProducts("Item 5", "Category5", "Description5", 5.00),
+			new POSProducts("Item 5", "Category5", "sdfghjkl;", 5.00),
 			new POSProducts("Item 6", "Category6", "Description6", 6.00),
 			new POSProducts("Item 7", "Category7", "Description7", 7.00),
 			new POSProducts("Item 8", "Category8", "Description7", 8.00),
@@ -72,15 +72,30 @@ public class POSApp {
 		List<String> listOfFoods = foods.readMenu();
 		for (String lineList : listOfFoods)
 			System.out.println(lineList);
+		
 		System.out.println();
-		System.out.println("What would you like to order?");
-		int itemChoice = sc.nextInt();
-		int itemIndex = itemChoice - 1;
-		product = products[itemIndex];
-		System.out.println(product.getName() + " " + product.getCategory() + " " + product.getDescription() + " "
-				+ product.getFormattedPrice());
+		System.out.println(listOfFoods);
+		
+		
+		ShoppingBag shoppingBag = new ShoppingBag();
+		
+//		product = products[itemIndex];
+//		System.out.println(product.getName() + " " + product.getCategory() + " " + product.getDescription() + " "
+//				+ product.getFormattedPrice());
 		// System.out.println(foods.calculateGrandTotal());
 
+	}
+	
+	public static void getLineItems(ShoppingBag shoppingBag) {
+		Scanner sc = new Scanner (System.in);
+		String choice = "y";
+		while(choice.equalsIgnoreCase("y")) {
+			System.out.println("What would you like to order?");
+			int itemChoice = sc.nextInt();
+			int itemIndex = itemChoice - 1;
+			
+			int quantity = sc.
+		}
 	}
 
 }

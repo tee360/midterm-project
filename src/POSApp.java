@@ -30,7 +30,7 @@ public class POSApp {
 		System.out.println("Here's our menu: ");
 		System.out.println();
 		//itemList = new POSClass().readMenu();
-		itemList = new ItemListMock().getListOfItems();
+		itemList = new PosMenu().getListOfItems();
 		 for(int i = 0; i < itemList.size(); i++)
 		    {
 		POSProducts newitemList = itemList.get(i);
@@ -126,7 +126,7 @@ public class POSApp {
 			int itemChoice = sc.nextInt();
 			int itemIndex = itemChoice - 1;
 			
-			int quantity = sc.
+		//	int quantity = sc.
 		}
 	}
 

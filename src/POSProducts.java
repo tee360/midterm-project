@@ -18,7 +18,7 @@ public class POSProducts {
 	}
 
 	public String getName() {
-		return getName();
+		return name;
 	}
 	
 	public void setName(String name) {
@@ -26,7 +26,7 @@ public class POSProducts {
 	}
 
 	public String getCategory() {
-		return getCategory();
+		return category;
 	}
 
 	public void setCategory(String category) {
@@ -34,7 +34,7 @@ public class POSProducts {
 	}
 
 	public String getDescription() {
-		return getDescription();
+		return description;
 	}
 
 
@@ -43,7 +43,7 @@ public class POSProducts {
 	}
 
 	public double getPrice() {
-		return getPrice();
+		return price;
 	}
 
 	public void setPrice(double price) {

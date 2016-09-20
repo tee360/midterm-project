@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class ShoppingBag {
 	
 	// the instance variable
-	private ArrayList<POSClass> lineItems;
+	private ArrayList<ShoppingBag> lineItems;
 	public double subtotal;
 	
 	// the constructor
@@ -15,19 +15,19 @@ public class ShoppingBag {
 	}
 	
 	// a method that adds a line item
-	public void addItem(POSClass lineItem) {
+	public void addItem(ShoppingBag lineItem) {
 		lineItems.add(lineItem);
 	}
 	
 	// the get accessor for the Line item collection
-	public ArrayList<POSClass> getLineItems() {
+	public ArrayList<ShoppingBag> getLineItems() {
 		return lineItems;
 	}
 	
 	// a method that gets the invoice total
 	public double getTotal() {
 		double invoiceTotal = 0;
-		for(POSClass lineItem : lineItems) {
+		for(ShoppingBag lineItem : lineItems) {
 			invoiceTotal += lineItem.getTotal();
 		}
 		return invoiceTotal;

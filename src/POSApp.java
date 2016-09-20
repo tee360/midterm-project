@@ -8,12 +8,8 @@ public class POSApp {
 
 	public static void main(String[] args) {
 		POSMenu menu = new POSMenu();
-		POSProducts product = new POSProducts(null, null, null, 0);
 		String moreItems = "y";
 		// TODO Auto-generated method stub
-
-		ArrayList<POSProducts> productList = new ArrayList<POSProducts>();
-		ArrayList<Double> shoppingBag = new ArrayList<Double>();
 		ArrayList<Integer> shoppingCartTotal = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to the Most Awesome Shop Ever!");

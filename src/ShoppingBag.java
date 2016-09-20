@@ -5,5 +5,7 @@ public class ShoppingBag {
 		double orderSalesTax = x * .06;
 		return orderSalesTax;
 	}
+	
+	
 
 }

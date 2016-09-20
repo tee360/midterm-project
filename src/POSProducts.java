@@ -14,7 +14,7 @@ public class POSProducts {
 		this.description = description;
 		this.price = price;
 	}
-
+	
 	public String getName() {
 		return name;
 	}

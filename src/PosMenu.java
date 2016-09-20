@@ -25,7 +25,7 @@ public class POSMenu {
 	public void printItems() {
 		for (POSProducts item : items) {
 
-			System.out.println(item.getName() + " " + item.getPrice() + " " + item.getDescription());
+			System.out.println(item.getName());
 		}
 
 	}

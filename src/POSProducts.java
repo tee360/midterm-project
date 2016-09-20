@@ -67,5 +67,3 @@ public class POSProducts {
 	}
 	
 }
-
-//private static Student[] students = new Student[] {

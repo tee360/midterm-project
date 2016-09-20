@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
@@ -39,9 +40,9 @@ public class ShoppingBag {
 		return currency.format(getTotal());
 	}
 	
-	public double calculateSalesTax() {
-		double orderSalesTax = this.subtotal * .06;
-		return formatSalesTax(orderSalesTax);
+	public double calculateSalesTax(double x) {
+		double orderSalesTax = x * .06;
+		return orderSalesTax;
 	}
 	
 	private double formatSalesTax(double salesTax) {
@@ -54,4 +55,5 @@ public class ShoppingBag {
 	public String calculateGrandTotal() {
 		return getTotalFormatted();
 	}
+
 }

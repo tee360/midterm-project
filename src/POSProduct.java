@@ -8,13 +8,19 @@ public class POSProduct {
 	private String category;
 	private String description;
 	private double price;
-	
+
+	List<String> product = new ArrayList<String>();
+
 
 	public POSProduct(String name, String category, String description, double price) {
 		this.name = name;
 		this.category = category;
 		this.description = description;
 		this.price = price;
+	}
+	
+	public POSProducts(List<String> product) {
+	this.product = product;
 	}
 
 	public String getName() {
@@ -58,6 +64,12 @@ public class POSProduct {
 
 	public String getFormattedPrice() {
 		return formatPrice(getPrice());
+	}
+
+
+	public double getTotal() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

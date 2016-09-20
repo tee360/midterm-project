@@ -6,7 +6,10 @@ import java.util.ArrayList;
 public class ShoppingBag {
 	
 	// the instance variable
+
+
 	private ArrayList<ShoppingBag> lineItems;
+
 	public double subtotal;
 	
 	// the constructor
@@ -15,11 +18,15 @@ public class ShoppingBag {
 	}
 	
 	// a method that adds a line item
+
 	public void addItem(ShoppingBag lineItem) {
 		lineItems.add(lineItem);
 	}
 	
 	// the get accessor for the Line item collection
+
+
+
 	public ArrayList<ShoppingBag> getLineItems() {
 		return lineItems;
 	}
@@ -27,6 +34,8 @@ public class ShoppingBag {
 	// a method that gets the invoice total
 	public double getTotal() {
 		double invoiceTotal = 0;
+
+
 		for(ShoppingBag lineItem : lineItems) {
 			invoiceTotal += lineItem.getTotal();
 		}
@@ -44,6 +53,7 @@ public class ShoppingBag {
 		return orderSalesTax;
 	}
 	
+
 	private double formatSalesTax(double salesTax) {
 		BigDecimal afterTax = new BigDecimal(salesTax);
 		afterTax = afterTax.setScale(2, RoundingMode.HALF_UP);
@@ -54,5 +64,6 @@ public class ShoppingBag {
 	public String calculateGrandTotal() {
 		return getTotalFormatted();
 	}
+
 
 }

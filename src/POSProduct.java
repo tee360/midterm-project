@@ -2,7 +2,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class POSProducts {
+public class POSProduct {
 		
 	private String name;
 	private String category;
@@ -10,7 +10,7 @@ public class POSProducts {
 	private double price;
 	
 
-	public POSProducts(String name, String category, String description, double price) {
+	public POSProduct(String name, String category, String description, double price) {
 		this.name = name;
 		this.category = category;
 		this.description = description;

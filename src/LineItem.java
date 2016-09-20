@@ -4,7 +4,7 @@ import java.util.List;
 
 public class LineItem {
 
-	private POSProducts product;
+	private POSProduct product;
 
 	// the instance variable
 	private int quantity;
@@ -18,7 +18,7 @@ public class LineItem {
 		this.quantity = 0;
 	}
 
-	public LineItem(POSProducts product, int quantity) {
+	public LineItem(POSProduct product, int quantity) {
 		this.product = product;
 		this.quantity = quantity;
 	}
@@ -31,11 +31,11 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
-	public POSProducts getProduct() {
+	public POSProduct getProduct() {
 		return product;
 	}
 
-	public void setProduct(POSProducts product) {
+	public void setProduct(POSProduct product) {
 		this.product = product;
 	}
 

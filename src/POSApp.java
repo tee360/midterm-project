@@ -8,11 +8,11 @@ public class POSApp {
 
 	public static void main(String[] args) {
 		POSMenu menu = new POSMenu();
-		POSProducts product = new POSProducts(null, null, null, 0);
+		POSProduct product = new POSProduct(null, null, null, 0);
 		String moreItems = "y";
 		// TODO Auto-generated method stub
 
-		ArrayList<POSProducts> productList = new ArrayList<POSProducts>();
+		ArrayList<POSProduct> productList = new ArrayList<POSProduct>();
 		ArrayList<Double> shoppingBag = new ArrayList<Double>();
 		ArrayList<Integer> shoppingCartTotal = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
@@ -36,7 +36,7 @@ public class POSApp {
 			for (double num : shoppingCartTotal) {
 				streamCart = streamCart + num;
 			}
-			POSProducts cartAmount = new POSProducts(moreItems, moreItems, moreItems, streamCart);
+			POSProduct cartAmount = new POSProduct(moreItems, moreItems, moreItems, streamCart);
 			 double Total = cartAmount.getPrice();
 			System.out.println("SubTotal: " + Total);
 			System.out.println("Continue shopping?");

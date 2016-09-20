@@ -19,7 +19,7 @@ public class POSProduct {
 		this.price = price;
 	}
 	
-	public POSProducts(List<String> product) {
+	public POSProduct(List<String> product) {
 	this.product = product;
 	}
 

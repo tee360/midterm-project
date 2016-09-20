@@ -18,27 +18,23 @@ public class POSMenu {
 		items.add(new POSProduct("Item 11", "Category11", "Description11", 11.00));
 		items.add(new POSProduct("Item 12", "Category12", "Description12", 12.00));
 		return items;
-
 	}
+	
 	private List<POSProduct> items = getListOfItems();
 	
 	public void printItems() {
 		for (POSProduct item : items) {
-
-			System.out.println(item.getName() + " " + item.getPrice() + " " + item.getDescription());
+			System.out.println(item.getName());
 		}
-
 	}
 	
 	public POSProduct getItem(int userSelection) {
 		int itemIndex = userSelection - 1;
-		return items.get(itemIndex);
-		
+		return items.get(itemIndex);		
 	}
 	
 	public double getSubTotal(int userQuantity, double itemPrice) {
-		return userQuantity * itemPrice;
-		
-	}
-	
+		return userQuantity * itemPrice;		
+	}	
+
 }

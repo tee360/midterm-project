@@ -1,24 +1,16 @@
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LineItem {
 
 	private POSProduct product;
-
-	// the instance variable
 	private int quantity;
 
-	// List<String> menu = new ArrayList<>();
-
-	// private ArrayList<POSClass> lineItems;
-
-	public LineItem() {
-		this.product = null;
-		this.quantity = 0;
+	public LineItem(POSProduct product, int quantity) {
+		this.product = product;
+		this.quantity = quantity;
 	}
 
-	public LineItem(POSProduct product, int quantity) {
+	public LineItem(String name, int quantWanted) {
 		this.product = product;
 		this.quantity = quantity;
 	}

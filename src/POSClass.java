@@ -7,6 +7,7 @@ import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,45 +15,30 @@ import java.util.Scanner;
 
 public class POSClass {
 
-	List<Double> pricing = Arrays.asList(100.0);
-	//List<String> menu = new ArrayList<>();
+	;
 	
-	// the instance variable
-	private ArrayList<POSClass> lineItems;	
-	
-	public double getSubTotal() {
-		double subtotal = 0;
-	    for(int i = 0; i < pricing.size(); i++)
-	    {
-	        subtotal += pricing.get(i);
-	    }
-	    return subtotal;
-	}
-	
-	public double getTotal() {
-		double invoiceTotal = 0;
-		for(POSClass lineItem : lineItems) {
-			invoiceTotal += lineItem.getTotal();
-		}
-		return invoiceTotal;
-	}
-	
-	public double calculateSalesTax(double x) {
-		double orderSalesTax = x * .06;
-		return orderSalesTax;
-	}
-	
-	public double formatSalesTax() {
-		return calculateSalesTax(getSubTotal());
-	}
-	
-	public double calculateGrandTotal() {
-		return formatSalesTax() + getSubTotal();
+	public POSClass(List<String> product) {
+		this.product = product;
 	}
 
-	public double calculateChange(double amountReceived) {
-		double changeAmount = calculateGrandTotal()- amountReceived ;
-		return changeAmount;
+	public List<String> getProduct() {
+		return product;
+	}
+
+	public void setProduct(List<String> product) {
+		this.product = product;
+	}
+
+	public double getTotal() {
+		double total = quantity * product.getPrice();
+		return total;
+	}
+
+	public String getTotalFormatted() {
+		double total = this.getTotal();
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		String totalFormatted = currency.format(total);
+		return totalFormatted;
 	}
 
 }

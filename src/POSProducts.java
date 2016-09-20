@@ -1,30 +1,38 @@
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class POSProducts {
 	
-	private String name;
-	private String category;
-	private String description;
-	private double price;
+	List<String> product = new ArrayList<String>();
 	
-
-	public POSProducts(String name, String category, String description, double price) {
-		this.name = name;
-		this.category = category;
-		this.description = description;
-		this.price = price;
-	}
+//	private String name;
+//	private String category;
+//	private String description;
+//	private double price;
+//	
+//
+//	public POSProducts(String name, String category, String description, double price) {
+//		this.name = name;
+//		this.category = category;
+//		this.description = description;
+//		this.price = price;
+//	}
+	
+	public POSProducts(List<String> product) {
+	this.product = product;
+}
 
 	public String getName() {
-		return name;
+		return getName();
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public String getCategory() {
-		return category;
+		return getCategory();
 	}
 
 	public void setCategory(String category) {
@@ -32,7 +40,7 @@ public class POSProducts {
 	}
 
 	public String getDescription() {
-		return description;
+		return getDescription();
 	}
 
 
@@ -41,7 +49,7 @@ public class POSProducts {
 	}
 
 	public double getPrice() {
-		return price;
+		return getPrice();
 	}
 
 	public void setPrice(double price) {

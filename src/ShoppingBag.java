@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
@@ -5,6 +7,7 @@ public class ShoppingBag {
 	
 	// the instance variable
 	private ArrayList<POSClass> lineItems;
+	public double subtotal;
 	
 	// the constructor
 	public ShoppingBag() {
@@ -34,5 +37,21 @@ public class ShoppingBag {
 	public String getTotalFormatted() {
 		NumberFormat currency = NumberFormat.getCurrencyInstance();
 		return currency.format(getTotal());
+	}
+	
+	public double calculateSalesTax() {
+		double orderSalesTax = this.subtotal * .06;
+		return formatSalesTax(orderSalesTax);
+	}
+	
+	private double formatSalesTax(double salesTax) {
+		BigDecimal afterTax = new BigDecimal(salesTax);
+		afterTax = afterTax.setScale(2, RoundingMode.HALF_UP);
+		double formatted = afterTax.doubleValue();
+		return formatted;
+	}
+	
+	public String calculateGrandTotal() {
+		return getTotalFormatted();
 	}
 }

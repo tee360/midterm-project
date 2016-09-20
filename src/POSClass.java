@@ -8,14 +8,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class POSClass {
 
 	public static final double subtotal = 0;
 
-	List<Double> pricing = Arrays.asList(1.39, 2.59, 7.32);
+	List<Double> pricing = Arrays.asList(100.0);
 	
 	private Path filePath;
 
@@ -38,7 +37,9 @@ public class POSClass {
 	}
 	
 	public double calculateSalesTax(double x) {
-		double orderSalesTax = x * .06;
+		
+		double orderSalesTax = x *.06;
+		//double orderSalesTax = calculateGrandTotal() * salesTaxRate;
 		return orderSalesTax;
 	}
 	
@@ -77,10 +78,10 @@ public class POSClass {
 			throw new RuntimeException("Unable to read menu.", ex);
 		}
 	}
-	
+}
+/*	}
 }
 public void getPaymentType() {
-	Scanner sc = new Scanner(System.in);
 	System.out.println("select payment type - cash ,credit or check" );
 	String paymentType = sc.nextLine();
-	System.out.println("");
+	System.out.println("");*/

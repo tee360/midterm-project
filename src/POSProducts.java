@@ -3,25 +3,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class POSProducts {
+		
+	private String name;
+	private String category;
+	private String description;
+	private double price;
 	
-	List<String> product = new ArrayList<String>();
-	
-//	private String name;
-//	private String category;
-//	private String description;
-//	private double price;
-//	
-//
-//	public POSProducts(String name, String category, String description, double price) {
-//		this.name = name;
-//		this.category = category;
-//		this.description = description;
-//		this.price = price;
-//	}
-	
-	public POSProducts(List<String> product) {
-	this.product = product;
-}
+
+	public POSProducts(String name, String category, String description, double price) {
+		this.name = name;
+		this.category = category;
+		this.description = description;
+		this.price = price;
+	}
 
 	public String getName() {
 		return getName();

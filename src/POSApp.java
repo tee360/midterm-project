@@ -14,13 +14,13 @@ public class POSApp {
 
 		ArrayList<POSProducts> productList = new ArrayList<POSProducts>();
 		ArrayList<Double> shoppingBag = new ArrayList<Double>();
-		ArrayList<Double> theLastSubTotal = new ArrayList<Double>();
+		ArrayList<Integer> shoppingCartTotal = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to the Most Awesome Shop Ever!");
 		System.out.println("Here's our menu: ");
 		
 		System.out.println();
-		
+		while (moreItems.equalsIgnoreCase("y")) {
 			//printItems();
 			menu.printItems();
 			System.out.println();
@@ -31,23 +31,31 @@ public class POSApp {
 			System.out.println("How many would you like?");
 			int quantWanted = sc.nextInt();
 			double thusSubTotal = menu.getSubTotal(quantWanted, itemChoice);
-			theLastSubTotal.add((double) thusSubTotal);
-			System.out.println("SubTotal: " + theLastSubTotal);
+			shoppingCartTotal.add((int) thusSubTotal);
+			double streamCart = 0;
+			for (double num : shoppingCartTotal) {
+				streamCart = streamCart + num;
+			}
+			POSProducts cartAmount = new POSProducts(moreItems, moreItems, moreItems, streamCart);
+			 double Total = cartAmount.getPrice();
+			System.out.println("SubTotal: " + Total);
 			System.out.println("Continue shopping?");
 			moreItems = sc.next();
 			
-	
+		
+		if (moreItems.equalsIgnoreCase("n")) {
 			ShoppingBag classer = new ShoppingBag();
-		
+			double addTax = 0;
+			double grandTotal = 0;
 			
-				int Total = (theLastSubTotal);
-				double TaxTotal = (classer.calculateSalesTax(theLastSubTotal));	
+				addTax = (classer.calculateSalesTax(Total));
+				grandTotal = (addTax) + Total;	
 			
-			System.out.println("Grand Total: " + (Total + TaxTotal));
+				System.out.println("Grand Total: " + (grandTotal));
 			
-		
+		}
 	}
 
-	
+	}
 
 }

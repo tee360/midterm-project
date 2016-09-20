@@ -71,5 +71,13 @@ public class POSProduct {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public String toString() {
+		return "Name: " + name + ",\tCategory: " + category 
+				+ ",\t Description: " + description + ",\t Price: "	
+				+ price + "";
+	}
+	
 	
 }

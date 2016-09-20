@@ -1,6 +1,4 @@
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class POSApp {
@@ -9,7 +7,6 @@ public class POSApp {
 		POSMenu menu = new POSMenu();
 		
 		String moreItems = "y";
-		// TODO Auto-generated method stub
 		ArrayList<Integer> shoppingCartTotal = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to the Most Awesome Shop Ever!");
@@ -55,7 +52,9 @@ public class POSApp {
 			
 		}
 	}
-
+		sc.close();
 	}
+	
 
 }
+

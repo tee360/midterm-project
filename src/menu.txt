@@ -1,4 +1,4 @@
-Pepsi	Food/Bev	Pop	1.00
+Pepsi	Food/Bev	Pop	1.50
 Welches	Food/Bev	Juice	2.00
 Oreos	Food/Bev	Cookies	3.00
 Chex	Food/Bev	Cereal	4.00
@@ -7,6 +7,6 @@ Bounty	Househld	PaperTowel	6.00
 Kleenex	Househld	Tissues	7.00
 Awesome	Househld	Cleaner	8.00
 Centrum	Hlth/Well	Vitamins	9.00
-Nyquil	Hlth/Well	Medicine	10.00
-Carmex	Hlth/Well	Moisturizer	11.00
-BandAid	Hlth/Well	FirstAid	12.00
+Nyquil	Hlth/Well	Medicine	5.50
+Carmex	Hlth/Well	Moisturizer	6.00
+BandAid	Hlth/Well	FirstAid	10.00

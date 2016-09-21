@@ -37,6 +37,7 @@ public class POSApp {
 			System.out.println(posProdMenu.get(itemChoice));
 			
 			System.out.println("How many would you like?");
+
 			int quantWanted = sc.nextInt();
 			
 			LineItem POSProduct = new LineItem((posProdMenu.get(itemChoice - 1)), quantWanted);
@@ -125,6 +126,7 @@ public class POSApp {
 		//}
 
 		}// end while loop
+
 		sc.close();
 	} // end of Main
 }// end of POSApp

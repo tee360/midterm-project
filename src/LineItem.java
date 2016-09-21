@@ -43,4 +43,11 @@ public class LineItem {
 		return totalFormatted;
 	}
 
+	@Override
+	public String toString() {
+		return "LineItem [product = " + product + ", quantity = " 
+				+ quantity + "]";
+	}
+	
+
 }

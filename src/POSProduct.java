@@ -43,7 +43,6 @@ public class POSProduct {
 		return description;
 	}
 
-
 	public void setDescription(String description) {
 		this.description = description;
 	}

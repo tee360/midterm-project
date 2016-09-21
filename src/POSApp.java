@@ -8,36 +8,32 @@ public class POSApp {
 		ArrayList<POSProduct> posProdMenu = new ArrayList<>();
 
 		String moreItems = "y";
-		int numChoice = 1;
-		String letterChoice = null;
+//		int numChoice = 1;
+//		String letterChoice = null;
 
 		ArrayList<Integer> shoppingCartTotal = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Welcome to the Most Awesome Shop Ever!");
+		System.out.println("Welcome to the Most Awesome Dollar Store!");
 		System.out.println("Here's our menu: ");
 		System.out.println();
 
 		while (moreItems.equalsIgnoreCase("y")) {
-			// printItems();
-			// menu.printItems();
-			// System.out.println(menu.readFromFile());
+			
 			posProdMenu = POSMenu.readFromFile();
 			for (int i = 0; i < posProdMenu.size(); i++) {
 				System.out.println(posProdMenu.get(i));
 			}
 
-			System.out.println();
-			System.out.println("What would you like to order? (Choose by number(1) or letter(2))");
-			String selection = "Enter Selection: ";
-			numChoice = Validator.getInt(sc, selection, 1, 2);
-			
+			System.out.println("What would you like to order? (Choose by line number(1))");
+//			String selection = "Enter Selection: ";
+//			numChoice = Validator.getInt(sc, selection, 1, 2);
+//			
 			int itemChoice = sc.nextInt();
 			
-			System.out.println(posProdMenu.get(itemChoice));
+			System.out.println(posProdMenu.get(itemChoice - 1));
 			
 			System.out.println("How many would you like?");
-
 			int quantWanted = sc.nextInt();
 			
 			LineItem POSProduct = new LineItem((posProdMenu.get(itemChoice - 1)), quantWanted);

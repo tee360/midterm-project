@@ -74,7 +74,7 @@ public class POSProduct {
 	@Override
 	public String toString() {
 		return "Name: " + name + ",\tCategory: " + category 
-				+ ",\t Description: " + description + ",\t Price: "	
+				+ ",\t Desc: " + description + ",\t\t Price: "	
 				+ price + "";
 	}
 	

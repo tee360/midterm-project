@@ -6,7 +6,6 @@ public class POSApp {
 	public static void main(String[] args) {
 
 		ArrayList<POSProduct> posProdMenu = new ArrayList<>();
-
 		
 //		int numChoice = 1;
 //		String letterChoice = null;

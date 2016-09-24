@@ -11,36 +11,35 @@ public class ShoppingBag {
 	
 	// the instance variable
 
-	private ArrayList<LineItem> lineItems;
+	private LineItem itemSummary;
 
-	public double subtotal;
+	public double runningTotal;
 	
 	// the constructor
-	public ShoppingBag() {
-		lineItems = new ArrayList<>();
+	public ShoppingBag(LineItem itemSummary, double runningTotal) {
+		this.itemSummary = itemSummary;
+		this.runningTotal = runningTotal;
 	}
 	
 	// a method that adds a line item
-
 	public void addItem(LineItem lineItem) {
-		lineItems.add(lineItem);
-	}
+		itemSummary.add(lineItem);
+	}	
 	
 	// the get accessor for the Line item collection
-
-	public ArrayList<LineItem> getLineItems() {
-		return lineItems;
+	public LineItem getLineItems() {
+		return itemSummary;
 	}
 	
-	public double getSubTotal(int userQuantity, double itemPrice) {
-		return userQuantity * itemPrice;		
-	}
+//	public double getSubTotal(int userQuantity, double itemPrice) {
+//		return userQuantity * itemPrice;		
+//	}
 	
 	// a method that gets the invoice total
 	public double getTotal() {
 		double invoiceTotal = 0;
 
-		for(LineItem lineItem : lineItems) {
+		for(LineItem lineItem : itemSummary) {
 			invoiceTotal += lineItem.getTotal();
 		}
 		return invoiceTotal;
@@ -65,7 +64,8 @@ public class ShoppingBag {
 	}
 	
 	public String calculateGrandTotal() {
-		return getTotalFormatted();
+		double formattedSalesTax = formatSalesTax(.06);
+		return getTotalFormatted() + formattedSalesTax;
 	}
 
 }

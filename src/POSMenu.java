@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -36,10 +38,13 @@ public class POSMenu {
 				String thing3 = newline[2];
 				String thing4 = newline[3];
 				
-				double thg4 = Double.parseDouble(thing4);
+				//double thg4 = Double.parseDouble(thing4);
+				double thg4 = new BigDecimal(thing4)
+	                    .setScale(2, RoundingMode.HALF_UP)
+	                    .doubleValue();
+
 				
 				posProdMenu.add(new POSProduct(thing1, thing2, thing3, thg4));
-				System.out.println();
 				line = reader.readLine();
 			}
 			

@@ -5,43 +5,41 @@ public class POSApp {
 
 	public static void main(String[] args) {
 
-		ArrayList<POSProduct> posProdMenu = new ArrayList<>();
-		
-//		int numChoice = 1;
-//		String letterChoice = null;
-
-		ArrayList<Integer> shoppingCartTotal = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Welcome to the Most Awesome Dollar Store!");
 		System.out.println("Here's our menu: ");
 		System.out.println();
 
+		ArrayList<POSProduct> posProdMenu = new ArrayList<>();
 		/**
 		 * // perform invoice calculations until choice isn't equal to "y" or "Y"
 		 */
 		String moreItems = "y";
 		while (!moreItems.equalsIgnoreCase("n")) {
 			
+			/**
+			 * Method call reads in menu from file and populates list
+			 * Enhanced for loop displays list
+			 */
 			posProdMenu = POSMenu.readFromFile();
 			for (int i = 0; i < posProdMenu.size(); i++) {
-				System.out.println(posProdMenu.get(i));
+				System.out.println((i+1) +". " + posProdMenu.get(i));
 			}
 
-			System.out.println("What would you like to order? (Choose by line number(1))");
+			System.out.println("\nWhat would you like to order? (Choose by line number)");
 //			String selection = "Enter Selection: ";
 //			numChoice = Validator.getInt(sc, selection, 1, 2);
-//			
-			int itemChoice = sc.nextInt();
-			
-			System.out.println(posProdMenu.get(itemChoice - 1));
+			int itemChoice = sc.nextInt();			
+			//System.out.println(posProdMenu.get(itemChoice - 1));
 			
 			System.out.println("How many would you like?");
 			int quantWanted = sc.nextInt();
 			
-			LineItem POSProduct = new LineItem((posProdMenu.get(itemChoice - 1)), quantWanted);
+			LineItem itemSelection = new LineItem((posProdMenu.get(itemChoice - 1)), quantWanted);
+			System.out.println("You have selected: " + quantWanted + " " +itemSelection.getProduct().getName());
 			
-			System.out.println("Line total: " +POSProduct.getTotal());
+			System.out.println("Your total so far is: " +itemSelection.getTotalFormatted());
 			
 			//ShoppingBag(POSProduct);
 			

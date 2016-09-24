@@ -58,7 +58,7 @@ public class POSProduct {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-//	
+	
 //	private String formatPrice(double x) {
 //		DecimalFormat df = new DecimalFormat();
 //		df.setMinimumFractionDigits(2);
@@ -68,19 +68,13 @@ public class POSProduct {
 //	public String getFormattedPrice() {
 //		return formatPrice(getPrice());
 //	}
-//
-//
-//	public double getTotal() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "Name: " + name + ",\tCategory: " + category 
-//				+ ",\t Desc: " + description + ",\t\t Price: $"	
-//				+ price + "";
-//	}
+
+	@Override
+	public String toString() {
+		return "Name: " + name + ",\tCategory: " + category 
+				+ ",\t Desc: " + description + ",\t\t Price: $"	
+				+ price + "";
+	}
 	
 	
 }

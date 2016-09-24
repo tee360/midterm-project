@@ -1,7 +1,11 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Hold info for any one menu item
+ * @author Thomas Martin
+ *
+ */
 public class POSProduct {
 		
 	private String name;
@@ -9,7 +13,7 @@ public class POSProduct {
 	private String description;
 	private double price;
 
-	List<String> product = new ArrayList<String>();
+	//List<String> product = new ArrayList<String>();
 
 
 	public POSProduct(String name, String category, String description, double price) {
@@ -19,9 +23,9 @@ public class POSProduct {
 		this.price = price;
 	}
 	
-	public POSProduct(List<String> product) {
-	this.product = product;
-	}
+//	public POSProduct(List<String> product) {
+//	this.product = product;
+//	}
 
 	public String getName() {
 		return name;
@@ -54,29 +58,29 @@ public class POSProduct {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	private String formatPrice(double x) {
-		DecimalFormat df = new DecimalFormat();
-		df.setMinimumFractionDigits(2);
-		return df.format(x);
-	}
-
-	public String getFormattedPrice() {
-		return formatPrice(getPrice());
-	}
-
-
-	public double getTotal() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString() {
-		return "Name: " + name + ",\tCategory: " + category 
-				+ ",\t Desc: " + description + ",\t\t Price: "	
-				+ price + "";
-	}
+//	
+//	private String formatPrice(double x) {
+//		DecimalFormat df = new DecimalFormat();
+//		df.setMinimumFractionDigits(2);
+//		return df.format(x);
+//	}
+//
+//	public String getFormattedPrice() {
+//		return formatPrice(getPrice());
+//	}
+//
+//
+//	public double getTotal() {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Name: " + name + ",\tCategory: " + category 
+//				+ ",\t Desc: " + description + ",\t\t Price: $"	
+//				+ price + "";
+//	}
 	
 	
 }

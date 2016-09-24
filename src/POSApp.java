@@ -7,7 +7,7 @@ public class POSApp {
 
 		ArrayList<POSProduct> posProdMenu = new ArrayList<>();
 
-		String moreItems = "y";
+		
 //		int numChoice = 1;
 //		String letterChoice = null;
 
@@ -18,7 +18,11 @@ public class POSApp {
 		System.out.println("Here's our menu: ");
 		System.out.println();
 
-		while (moreItems.equalsIgnoreCase("y")) {
+		/**
+		 * // perform invoice calculations until choice isn't equal to "y" or "Y"
+		 */
+		String moreItems = "y";
+		while (!moreItems.equalsIgnoreCase("n")) {
 			
 			posProdMenu = POSMenu.readFromFile();
 			for (int i = 0; i < posProdMenu.size(); i++) {
@@ -38,7 +42,9 @@ public class POSApp {
 			
 			LineItem POSProduct = new LineItem((posProdMenu.get(itemChoice - 1)), quantWanted);
 			
-			System.out.println(POSProduct);
+			System.out.println("Line total: " +POSProduct.getTotal());
+			
+			//ShoppingBag(POSProduct);
 			
 //			double streamCart = posProdMenu.get(itemChoice).getPrice();
 //			double thusSubTotal = posProdMenu.getTotal(quantWanted,

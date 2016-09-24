@@ -2,12 +2,16 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-
+/**
+ * Responsibility: Track items selected
+ * @author Thomas Martin
+ *
+ */
 public class ShoppingBag {
 	
 	// the instance variable
 
-	private ArrayList<ShoppingBag> lineItems;
+	private ArrayList<LineItem> lineItems;
 
 	public double subtotal;
 	
@@ -18,21 +22,25 @@ public class ShoppingBag {
 	
 	// a method that adds a line item
 
-	public void addItem(ShoppingBag lineItem) {
+	public void addItem(LineItem lineItem) {
 		lineItems.add(lineItem);
 	}
 	
 	// the get accessor for the Line item collection
 
-	public ArrayList<ShoppingBag> getLineItems() {
+	public ArrayList<LineItem> getLineItems() {
 		return lineItems;
+	}
+	
+	public double getSubTotal(int userQuantity, double itemPrice) {
+		return userQuantity * itemPrice;		
 	}
 	
 	// a method that gets the invoice total
 	public double getTotal() {
 		double invoiceTotal = 0;
 
-		for(ShoppingBag lineItem : lineItems) {
+		for(LineItem lineItem : lineItems) {
 			invoiceTotal += lineItem.getTotal();
 		}
 		return invoiceTotal;

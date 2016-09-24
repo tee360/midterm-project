@@ -1,5 +1,10 @@
 import java.text.NumberFormat;
 
+/**
+ * Responsibility: Hold information for 1 shopping bag line item
+ * @author thomas
+ *
+ */
 public class LineItem {
 
 	private POSProduct product;
@@ -10,8 +15,8 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
-	public LineItem(String name, int quantWanted) {
-		this.product = product;
+	public LineItem(String name, int quantity) {
+		this.product.setName(name);
 		this.quantity = quantity;
 	}
 

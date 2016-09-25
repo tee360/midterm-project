@@ -9,10 +9,8 @@ import java.util.ArrayList;
  */
 public class ShoppingBag {
 	
-	// the instance variable
-
+	// the instance variables
 	private LineItem itemSummary;
-
 	public double runningTotal;
 	
 	// the constructor
@@ -21,34 +19,42 @@ public class ShoppingBag {
 		this.runningTotal = runningTotal;
 	}
 	
-	// a method that adds a line item
-	public void addItem(LineItem lineItem) {
-		itemSummary.add(lineItem);
-	}	
-	
-	// the get accessor for the Line item collection
-	public LineItem getLineItems() {
-		return itemSummary;
-	}
-	
+//	// a method that adds a line item
+//	public void addItem(LineItem lineItem) {
+//		itemSummary.add(lineItem);
+//	}	
+//	
+//	// the get accessor for the Line item collection
+//	public LineItem getLineItems() {
+//		return itemSummary;
+//	}
+//	
 //	public double getSubTotal(int userQuantity, double itemPrice) {
 //		return userQuantity * itemPrice;		
 //	}
 	
-	// a method that gets the invoice total
-	public double getTotal() {
-		double invoiceTotal = 0;
-
-		for(LineItem lineItem : itemSummary) {
-			invoiceTotal += lineItem.getTotal();
-		}
-		return invoiceTotal;
+	public double getRunningTotal() {
+		return runningTotal;
 	}
+
+	public void setRunningTotal(double runningTotal) {
+		this.runningTotal = runningTotal;
+	}
+
+//	// a method that gets the invoice total
+//	public double getTotal() {
+//		double invoiceTotal = 0;
+//
+//		for(LineItem lineItem : itemSummary) {
+//			invoiceTotal += lineItem.getTotal();
+//		}
+//		return invoiceTotal;
+//	}
 	
 	// a method that returns the invoice total in currency format
 	public String getTotalFormatted() {
 		NumberFormat currency = NumberFormat.getCurrencyInstance();
-		return currency.format(getTotal());
+		return currency.format(getRunningTotal());
 	}
 	
 	public double calculateSalesTax(double x) {

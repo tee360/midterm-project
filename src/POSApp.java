@@ -31,15 +31,27 @@ public class POSApp {
 //			String selection = "Enter Selection: ";
 //			numChoice = Validator.getInt(sc, selection, 1, 2);
 			int itemChoice = sc.nextInt();			
-			//System.out.println(posProdMenu.get(itemChoice - 1));
-			
+						
 			System.out.println("How many would you like?");
 			int quantWanted = sc.nextInt();
 			
 			LineItem itemSelection = new LineItem((posProdMenu.get(itemChoice - 1)), quantWanted);
 			System.out.println("You have selected: " + quantWanted + " " +itemSelection.getProduct().getName());
 			
+			ShoppingBag yourBag = new ShoppingBag(itemSelection, itemSelection.getTotal());
+			System.out.println(yourBag.getTotalFormatted());
+			
+			ArrayList<ShoppingBag> shoppingBagTotal = new ArrayList<ShoppingBag>();
+			for(ShoppingBag bag: shoppingBagTotal) {
+				shoppingBagTotal.add(bag);
+			}
+			System.out.println(shoppingBagTotal.get(0));
 			System.out.println("Your total so far is: " +itemSelection.getTotalFormatted());
+			for (int i = 0; i < shoppingBagTotal.size(); i++) {
+				double totalSoFar = shoppingBagTotal.get(i).getRunningTotal();
+				System.out.println(totalSoFar);
+			}
+			
 			
 			//ShoppingBag(POSProduct);
 			
